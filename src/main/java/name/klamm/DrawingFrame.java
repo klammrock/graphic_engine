@@ -31,11 +31,11 @@ public class DrawingFrame extends JFrame {
     // Custom panel for drawing
     class DrawingPanel extends JPanel {
         public DrawingPanel() {
-            if (SwingUtilities.isEventDispatchThread()) {
-                System.out.println("Running on EDT - don't block here!");
-            }
+//            if (SwingUtilities.isEventDispatchThread()) {
+//                System.out.println("Running on EDT - don't block here!");
+//            }
 
-            setDoubleBuffered(true);
+            // setDoubleBuffered(true);
 
             addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
@@ -56,6 +56,16 @@ public class DrawingFrame extends JFrame {
                     RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON
             );
+
+//            g2d.setRenderingHint(
+//                    RenderingHints.KEY_RENDERING,
+//                    RenderingHints.VALUE_RENDER_QUALITY
+//            );
+//
+//            g2d.setRenderingHint(
+//                    RenderingHints.KEY_TEXT_ANTIALIASING,
+//                    RenderingHints.VALUE_TEXT_ANTIALIAS_ON
+//            );
 
             g.setColor(Color.BLUE);
             g.fillRect(rectX, rectY, 200, 100);
